@@ -5,27 +5,33 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { UsersComponent } from './components/users/users.component';
 import { CalendarsComponent } from './components/calendars/calendars.component';
 import { EvaluationsComponent } from './components/evaluations/evaluations.component';
 import { InscriptionsComponent } from './components/inscriptions/inscriptions.component';
 import { CoursesComponent } from './components/courses/courses.component';
+import { LoginComponent } from './components/login/login.component';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { UsersComponent } from './components/users/users.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    UsersComponent,
     CalendarsComponent,
     EvaluationsComponent,
     InscriptionsComponent,
-    CoursesComponent
+    CoursesComponent,
+    LoginComponent,
+    SignUpComponent,
+    UsersComponent
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
