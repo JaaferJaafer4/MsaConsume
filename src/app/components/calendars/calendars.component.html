@@ -1,1 +1,48 @@
-<p>calendars works!</p>
+
+    <div class="container mt-5">
+        <form form #f="ngForm">
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input type="text" class="form-control" id="title" placeholder="Enter title" name="title" #title="ngModel" [(ngModel)]="event.title" required>
+            </div>
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea class="form-control" id="description" rows="4" placeholder="Enter description" name="desc" #desc="ngModel" [(ngModel)]="event.description" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="startDate">Start Date</label>
+                <input type="date" class="form-control" id="startDate" name="start" #start="ngModel" [(ngModel)]="event.startDate" required>
+            </div>
+            <div class="form-group">
+                <label for="endDate">End Date</label>
+                <input type="date" class="form-control" id="endDate" name="end" #end="ngModel" [(ngModel)]="event.endDate" required>
+            </div>
+     
+            <button type="submit" class="btn btn-dark mt-3" [disabled]="f.invalid" (click)="add()">Submit</button>
+        </form>
+    </div>
+    
+
+    <div class="container mt-5">
+        <h2>User List</h2>
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let event of list_events">
+                    <td>{{event.title}}</td>
+                    <td>{{event.description}}</td>
+                    <td>{{event.startDate}}</td>
+                    <td>{{event.endDate}}</td>
+                </tr>
+   
+            </tbody>
+        </table>
+
+    </div>

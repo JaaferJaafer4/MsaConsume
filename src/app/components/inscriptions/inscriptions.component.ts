@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { InscriptionRequest } from 'src/app/models/inscription';
+import { InscriptionService } from 'src/app/services/inscription.service';
 
 @Component({
   selector: 'app-inscriptions',
@@ -7,9 +9,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InscriptionsComponent implements OnInit {
 
-  constructor() { }
+  list_insc! : InscriptionRequest[];
+  inscription : InscriptionRequest = new InscriptionRequest();
+
+  constructor(private _service : InscriptionService) { }
 
   ngOnInit(): void {
+      this._service.getInscriptions().subscribe(
+        data => this.list_insc = data
+      )
   }
 
+
+  add()
+  {
+    this._service.addInscription(this.inscription).subscribe(
+      data => {this.list_insc.push(data);
+        this.inscription = new InscriptionRequest();
+      }
+    )
+  }
 }
