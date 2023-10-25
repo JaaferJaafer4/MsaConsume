@@ -9,6 +9,7 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class UsersComponent implements OnInit {
   list_users! : User[];
+  user : User = new User();
   constructor(private _service : UserService) { }
 
   ngOnInit(): void {
@@ -17,4 +18,13 @@ export class UsersComponent implements OnInit {
       )
   }
 
+
+  add()
+  {
+    this._service.addUser(this.user).subscribe(
+      data => {this.list_users.push(data);
+        this.user = new User();
+      }
+    )
+  }
 }

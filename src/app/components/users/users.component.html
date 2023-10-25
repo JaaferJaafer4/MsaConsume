@@ -1,12 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User List</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-</head>
-<body>
+
+    <div class="container mt-5">
+        <form #f="ngForm">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" name="username" #username="ngModel" [(ngModel)]="user.username" class="form-control" id="username" placeholder="Enter username" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" #email="ngModel" [(ngModel)]="user.email" required email>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" placeholder="Password" name="password" #password="ngModel" [(ngModel)]="user.password" required>
+            </div>
+            <div class="form-group">
+                <label for="birthDate">Birth Date</label>
+                <input type="date" class="form-control" id="birthDate" name="birth" #birth="ngModel" [(ngModel)]="user.birthDate" required>
+            </div>
+            <div class="form-group">
+                <label for="role">Role</label>
+                <select class="form-control" id="role" name="role" #role="ngModel" [(ngModel)]="user.role" required>
+                    <option value="ADMIN">Admin</option>
+                    <option value="SUPERVISOR">Supervisor</option>
+                    <option value="STUDENT">Student</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-success mt-3" [disabled]="f.invalid" (click)="add()">Submit</button>
+        </form>
+    </div>
+    
+
     <div class="container mt-5">
         <h2>User List</h2>
         <table class="table table-bordered table-striped">
@@ -14,17 +37,19 @@
                 <tr>
                     <th>Name</th>
                     <th>Email</th>
+                    <th>BirthDate</th>
+                    <th>Role</th>
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let user of list_users">
                     <td>{{user.username}}</td>
                     <td>{{user.email}}</td>
+                    <td>{{user.birthDate}}</td>
+                    <td>{{user.role}}</td>
                 </tr>
    
             </tbody>
         </table>
 
     </div>
-</body>
-</html>

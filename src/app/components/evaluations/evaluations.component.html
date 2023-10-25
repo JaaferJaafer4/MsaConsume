@@ -1,1 +1,47 @@
-<p>evaluations works!</p>
+
+    <div class="container mt-5">
+        <form #f="ngForm">
+            <div class="form-group">
+                <label for="objectif">Objectif</label>
+                <input type="text" class="form-control" id="objectif" placeholder="Enter objectif" name="obj" #obj="ngModel" [(ngModel)]="evaluation.objectif" required>
+            </div>
+            <div class="form-group">
+                <label for="criteres">Critères</label>
+                <textarea class="form-control" id="criteres" rows="4" placeholder="Enter critères" name="crit" #crit="ngModel" [(ngModel)]="evaluation.criteres" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="dateEvaluation">Date d'Évaluation</label>
+                <input type="date" class="form-control" id="dateEvaluation" name="date" #date="ngModel" [(ngModel)]="evaluation.dateEvaluation" required>
+            </div>
+            <div class="form-group">
+                <label for="resultat">Résultat</label>
+                <input type="text" class="form-control" id="resultat" placeholder="Enter résultat" name="resultat" #resultat="ngModel" [(ngModel)]="evaluation.resultat" required>
+            </div>
+            <button type="submit" class="btn btn-info mt-3" [disabled]="f.invalid" (click)="add()">Submit</button>
+        </form>
+    </div>
+
+
+    <div class="container mt-5">
+        <h2>User List</h2>
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Objectif</th>
+                    <th>Critères</th>
+                    <th>Date evaluation</th>
+                    <th>Résultat</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let evaluation of list_eval">
+                    <td>{{evaluation.objectif}}</td>
+                    <td>{{evaluation.criteres}}</td>
+                    <td>{{evaluation.dateEvaluation}}</td>
+                    <td>{{evaluation.resultat}}</td>
+                </tr>
+   
+            </tbody>
+        </table>
+
+    </div>
