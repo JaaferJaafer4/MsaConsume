@@ -45,7 +45,7 @@
                 <tr *ngFor="let user of list_users">
                     <td>{{user.username}}</td>
                     <td>{{user.email}}</td>
-                    <td>{{user.birthDate}}</td>
+                    <td>{{user.birthDate | date}}</td>
                     <td>{{user.role}}</td>
                 </tr>
    

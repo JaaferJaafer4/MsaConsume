@@ -20,7 +20,7 @@
 
 
 <div class="container mt-5">
-    <h2>User List</h2>
+    <h2>Inscription List</h2>
     <table class="table table-bordered table-striped">
         <thead>
             <tr>
@@ -30,7 +30,7 @@
         </thead>
         <tbody>
             <tr *ngFor="let inscription of list_insc">
-                <td>{{inscription.date}}</td>
+                <td>{{inscription.date | date}}</td>
                 <td>{{inscription.status}}</td>
             </tr>
 

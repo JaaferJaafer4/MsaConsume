@@ -23,7 +23,7 @@
 
 
     <div class="container mt-5">
-        <h2>User List</h2>
+        <h2>Evaluation List</h2>
         <table class="table table-bordered table-striped">
             <thead>
                 <tr>
@@ -37,7 +37,7 @@
                 <tr *ngFor="let evaluation of list_eval">
                     <td>{{evaluation.objectif}}</td>
                     <td>{{evaluation.criteres}}</td>
-                    <td>{{evaluation.dateEvaluation}}</td>
+                    <td>{{evaluation.dateEvaluation | date}}</td>
                     <td>{{evaluation.resultat}}</td>
                 </tr>
    
