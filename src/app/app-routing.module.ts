@@ -5,12 +5,10 @@ import { CalendarsComponent } from './components/calendars/calendars.component';
 import { EvaluationsComponent } from './components/evaluations/evaluations.component';
 import { CoursesComponent } from './components/courses/courses.component';
 import { LoginComponent } from './components/login/login.component';
-import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { UsersComponent } from './components/users/users.component';
 
 const routes: Routes = [
   {path:'login',component:LoginComponent},
-  {path:'signup',component:SignUpComponent},
   {path:'inscriptions',component:InscriptionsComponent},
   {path:'calendars',component:CalendarsComponent},
   {path:'evaluations',component:EvaluationsComponent},

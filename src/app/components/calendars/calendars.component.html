@@ -24,7 +24,7 @@
     
 
     <div class="container mt-5">
-        <h2>User List</h2>
+        <h2>Calendar List</h2>
         <table class="table table-bordered table-striped">
             <thead>
                 <tr>
@@ -38,7 +38,7 @@
                 <tr *ngFor="let event of list_events">
                     <td>{{event.title}}</td>
                     <td>{{event.description}}</td>
-                    <td>{{event.startDate}}</td>
+                    <td>{{event.startDate | date}}</td>
                     <td>{{event.endDate}}</td>
                 </tr>
    

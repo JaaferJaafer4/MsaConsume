@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { User } from '../models/user';
 import { Observable } from 'rxjs';
+import { AuthenticationRequest } from '../models/authenticationrequest';
 
 
 @Injectable({
@@ -19,6 +20,10 @@ export class UserService {
 
   addUser(user : User) : Observable<User>{
     return this.http.put<User>(this.apiUrl +"/add",user);
+  }
+
+  authenticate(auth : AuthenticationRequest) : Observable<boolean>{
+    return this.http.post<boolean>(this.apiUrl + "/authenticate",auth)
   }
 
 }

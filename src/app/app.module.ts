@@ -10,7 +10,6 @@ import { EvaluationsComponent } from './components/evaluations/evaluations.compo
 import { InscriptionsComponent } from './components/inscriptions/inscriptions.component';
 import { CoursesComponent } from './components/courses/courses.component';
 import { LoginComponent } from './components/login/login.component';
-import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { UsersComponent } from './components/users/users.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
@@ -24,7 +23,7 @@ import { FormsModule } from '@angular/forms';
     InscriptionsComponent,
     CoursesComponent,
     LoginComponent,
-    SignUpComponent,
+  
     UsersComponent
     
   ],
