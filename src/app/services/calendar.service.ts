@@ -20,5 +20,8 @@ export class CalendarService {
     return this.http.put<Event>(this.apiUrl +"/add" ,event);
   }
 
-  
+  delete(id : number) : Observable<any>
+  {
+    return this.http.delete(this.apiUrl + "/"+id);
+  }
 }

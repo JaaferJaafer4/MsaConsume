@@ -13,6 +13,7 @@ import { LoginComponent } from './components/login/login.component';
 import { UsersComponent } from './components/users/users.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { ChatComponent } from './components/chat/chat.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { FormsModule } from '@angular/forms';
     CoursesComponent,
     LoginComponent,
   
-    UsersComponent
+    UsersComponent,
+       ChatComponent
     
   ],
   imports: [

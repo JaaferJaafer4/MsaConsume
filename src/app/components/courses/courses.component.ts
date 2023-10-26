@@ -30,4 +30,12 @@ export class CoursesComponent implements OnInit {
     )
   }
 
+
+  delete(id : number)
+  {
+    this._service.delete(id).subscribe(
+      data => this.list_courses = this.list_courses.filter(item => item.idCourse != id)
+    )
+  }
+
 }

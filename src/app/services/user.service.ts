@@ -26,4 +26,8 @@ export class UserService {
     return this.http.post<boolean>(this.apiUrl + "/authenticate",auth)
   }
 
+  delete(id : number) : Observable<any>
+  {
+    return this.http.delete(this.apiUrl + "/"+id);
+  }
 }

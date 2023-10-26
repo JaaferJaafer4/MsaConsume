@@ -29,4 +29,12 @@ export class InscriptionsComponent implements OnInit {
       }
     )
   }
+
+
+  delete(id : number)
+  {
+    this._service.delete(id).subscribe(
+      data => this.list_insc = this.list_insc.filter(item => item.id != id)
+    )
+  }
 }

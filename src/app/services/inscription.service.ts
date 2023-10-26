@@ -18,4 +18,9 @@ export class InscriptionService {
   addInscription(event : InscriptionRequest) : Observable<InscriptionRequest>{
     return this.http.post<InscriptionRequest>(this.apiUrl +"/add" ,event);
   }
+
+  delete(id : number) : Observable<any>
+  {
+    return this.http.delete(this.apiUrl + "/delete/"+id);
+  }
 }
