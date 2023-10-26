@@ -39,6 +39,7 @@
                     <th>Email</th>
                     <th>BirthDate</th>
                     <th>Role</th>
+                    <th>Delete</th>
                 </tr>
             </thead>
             <tbody>
@@ -47,6 +48,13 @@
                     <td>{{user.email}}</td>
                     <td>{{user.birthDate | date}}</td>
                     <td>{{user.role}}</td>
+                    <td>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" style="cursor: pointer;" (click)="delete(user.id)" viewBox="0 0 20 20">
+                            <text x="0" y="15" fill="darkred">x</text>
+                        </svg>
+                    </td>
+                    
+
                 </tr>
    
             </tbody>

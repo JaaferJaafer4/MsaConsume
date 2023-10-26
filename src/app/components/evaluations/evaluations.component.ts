@@ -29,4 +29,13 @@ export class EvaluationsComponent implements OnInit {
       }
     )
   }
+
+
+
+  delete(id : number)
+  {
+    this._service.delete(id).subscribe(
+      data => this.list_eval = this.list_eval.filter(item => item.idEvaluation != id)
+    )
+  }
 }

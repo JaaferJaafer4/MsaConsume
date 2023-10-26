@@ -19,4 +19,9 @@ export class EvaluationService {
   addEvaluations(evaluation : evaluation) : Observable<evaluation>{
     return this.http.post<evaluation>(this.apiUrl +"/add" ,evaluation);
   }
+
+  delete(id : number) : Observable<any>
+  {
+    return this.http.delete(this.apiUrl + "/"+id);
+  }
 }

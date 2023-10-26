@@ -29,4 +29,12 @@ export class CalendarsComponent implements OnInit {
     )
   }
 
+
+  delete(id : number)
+  {
+    this._service.delete(id).subscribe(
+      data => this.list_events = this.list_events.filter(item => item.eventId != id)
+    )
+  }
+
 }

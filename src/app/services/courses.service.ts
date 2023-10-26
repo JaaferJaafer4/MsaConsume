@@ -18,4 +18,9 @@ export class CoursesService {
   addCourse(course : Course) : Observable<Course>{
     return this.http.put<Course>(this.apiUrl +"/add" ,course);
   }
+
+  delete(id : number) : Observable<any>
+  {
+    return this.http.delete(this.apiUrl + "/"+id);
+  }
 }

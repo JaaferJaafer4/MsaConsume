@@ -26,12 +26,18 @@
             <tr>
                 <th>Date</th>
                 <th>Status</th>
+                <th>Delete</th>
             </tr>
         </thead>
         <tbody>
             <tr *ngFor="let inscription of list_insc">
                 <td>{{inscription.date | date}}</td>
                 <td>{{inscription.status}}</td>
+                <td>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" style="cursor: pointer;" (click)="delete(inscription.id)" viewBox="0 0 20 20">
+                        <text x="0" y="15" fill="darkred">x</text>
+                    </svg>
+                </td>
             </tr>
 
         </tbody>

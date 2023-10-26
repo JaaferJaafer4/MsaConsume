@@ -27,4 +27,11 @@ export class UsersComponent implements OnInit {
       }
     )
   }
+
+  delete(id : number)
+  {
+    this._service.delete(id).subscribe(
+      data => this.list_users = this.list_users.filter(item => item.id != id)
+    )
+  }
 }

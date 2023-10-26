@@ -31,6 +31,7 @@
                     <th>Critères</th>
                     <th>Date evaluation</th>
                     <th>Résultat</th>
+                    <th>Delete</th>
                 </tr>
             </thead>
             <tbody>
@@ -39,6 +40,11 @@
                     <td>{{evaluation.criteres}}</td>
                     <td>{{evaluation.dateEvaluation | date}}</td>
                     <td>{{evaluation.resultat}}</td>
+                    <td>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" style="cursor: pointer;" (click)="delete(evaluation.idEvaluation)" viewBox="0 0 20 20">
+                            <text x="0" y="15" fill="darkred">x</text>
+                        </svg>
+                    </td>
                 </tr>
    
             </tbody>

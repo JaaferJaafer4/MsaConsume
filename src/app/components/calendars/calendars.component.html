@@ -32,6 +32,7 @@
                     <th>Description</th>
                     <th>Start Date</th>
                     <th>End Date</th>
+                    <th>Delete</th>
                 </tr>
             </thead>
             <tbody>
@@ -39,7 +40,12 @@
                     <td>{{event.title}}</td>
                     <td>{{event.description}}</td>
                     <td>{{event.startDate | date}}</td>
-                    <td>{{event.endDate}}</td>
+                    <td>{{event.endDate | date}}</td>
+                    <td>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" style="cursor: pointer;" (click)="delete(event.eventId)" viewBox="0 0 20 20">
+                            <text x="0" y="15" fill="darkred">x</text>
+                        </svg>
+                    </td>
                 </tr>
    
             </tbody>
